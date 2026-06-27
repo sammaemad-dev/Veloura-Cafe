@@ -24,7 +24,7 @@ function Navbar() {
         </li>
 
         <li>
-          <Link to="/reviews">Reviews</Link>
+          <Link to="/reviews">Review</Link>
         </li>
 
         <li>
