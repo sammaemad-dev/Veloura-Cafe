@@ -6,6 +6,7 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Contact from "./pages/Contact/Contact";
 import OurCafe from "./pages/OurCafe/OurCafe";
+import Menu from "./pages/Menu/Menu";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/our-cafe" element={<OurCafe />} />
+             <Route path="/menu" element={<Menu />} />
 
       </Routes>
     </BrowserRouter>
