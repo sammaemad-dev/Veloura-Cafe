@@ -1,6 +1,6 @@
 import "./About.css";
 import aboutImage from "../../sections/images/About.png";
-
+import { Link } from "react-router-dom";
 function About() {
   return (
     <section className="about" id="about">
@@ -47,9 +47,12 @@ function About() {
             </div>
           </div>
 
-          <button className="learn-btn">
+          {/* <button className="learn-btn">
             Learn More →
-          </button>
+          </button> */}
+          <Link to="/our-cafe" className="learn-btn">
+  Learn More →
+</Link>
         </div>
 
       </div>
