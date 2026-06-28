@@ -1,4 +1,13 @@
 import "./Contact.css";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaClock,
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa";
 
 function Contact() {
   return (
@@ -6,68 +15,114 @@ function Contact() {
 
       <div className="contact-container">
 
-        <h1>Let's Make Something Together</h1>
+        <div className="contact-title">
 
-        <p className="contact-subtitle">
-          Connect with Veloura Cafe effortlessly! Fill out the form below
-          and let us know how we can help you.
-        </p>
+          <h1>Get In Touch With Veloura</h1>
 
-        <form className="contact-form">
+          <p>
+            We'd love to hear from you. Fill out the form and we'll get
+            back to you as soon as possible.
+          </p>
 
-          <input
-            type="text"
-            placeholder="Name"
-          />
+        </div>
 
-          <input
-            type="email"
-            placeholder="Email"
-          />
+        <div className="contact-content">
 
-          <input
-            type="tel"
-            placeholder="Phone Number"
-          />
+          {/* Left Side */}
 
-          <select>
+          <div className="contact-info">
 
-            <option>
-              Service Of Interest
-            </option>
+            <h2>Our Cafe</h2>
 
-            <option>
-              Reservation
-            </option>
+            <div className="info">
 
-            <option>
-              Catering
-            </option>
+              <p>
+                <FaMapMarkerAlt className="icon" />
+                Downtown, Cairo, Egypt
+              </p>
 
-            <option>
-              Private Events
-            </option>
+              <p>
+                <FaPhoneAlt className="icon" />
+                +20 100 000 0000
+              </p>
 
-            <option>
-              Customer Support
-            </option>
+              <p>
+                <FaEnvelope className="icon" />
+                hello@veloura.com
+              </p>
 
-          </select>
+              <p>
+                <FaClock className="icon" />
+                Everyday 8:00 AM - 12:00 AM
+              </p>
 
-          <input
-            type="text"
-            placeholder="Preferred Date"
-          />
+            </div>
 
-          <textarea
-            placeholder="Message..."
-          ></textarea>
+            <h3>Follow Us</h3>
 
-          <button type="submit">
-            Send
-          </button>
+            <div className="socials">
 
-        </form>
+              <FaFacebookF />
+
+              <FaInstagram />
+
+              <FaTwitter />
+
+            </div>
+
+          </div>
+
+          {/* Right Side */}
+
+          <form className="contact-form">
+
+            <input
+              type="text"
+              placeholder="Full Name"
+            />
+
+            <input
+              type="email"
+              placeholder="Email Address"
+            />
+
+            <input
+              type="text"
+              placeholder="Phone Number"
+            />
+
+            <select>
+
+              <option>Choose Service</option>
+
+              <option>Reservation</option>
+
+              <option>Private Event</option>
+
+              <option>Catering</option>
+
+              <option>Feedback</option>
+
+            </select>
+
+            <input
+              type="text"
+              placeholder="Preferred Date"
+            />
+
+            <textarea
+              placeholder="Tell us how we can help..."
+            ></textarea>
+
+            <button>
+
+              Send Message
+
+            </button>
+
+          </form>
+
+        </div>
 
       </div>
 
