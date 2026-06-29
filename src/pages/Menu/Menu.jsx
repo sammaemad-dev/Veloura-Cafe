@@ -1,103 +1,85 @@
-import { useState } from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import "./Menu.css";
-
+import MenuHeader from "./MenuHeader";
 import MenuCard from "./MenuCard";
-import menu from "./MenuData";
+import { menuItems, categories } from "./MenuData";
 
-function Menu() {
+export default function Menu() {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [searchQuery, setSearchQuery]       = useState("");
+  const [cart, setCart]                     = useState({});
+  const [toastItem, setToastItem]           = useState(null);
+  const [toastVisible, setToastVisible]     = useState(false);
 
-  const categories = [
-    "All",
-    "Hot Coffee",
-    "Cold Coffee",
-    "Espresso",
-    "Latte",
-    "Cappuccino",
-  ];
+  const filteredItems = useMemo(() =>
+    menuItems.filter((item) => {
+      const matchCat    = activeCategory === "all" || item.category.includes(activeCategory);
+      const matchSearch = !searchQuery ||
+        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.subtitle.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchCat && matchSearch;
+    }),
+    [activeCategory, searchQuery]
+  );
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [search, setSearch] = useState("");
+  const totalCartItems = useMemo(
+    () => Object.values(cart).reduce((s, q) => s + q, 0),
+    [cart]
+  );
 
-  const filteredMenu = menu.filter((item) => {
-    const matchCategory =
-      selectedCategory === "All" ||
-      item.category === selectedCategory;
+  const handleAddToCart = useCallback((item) => {
+    setCart((prev) => ({ ...prev, [item.id]: (prev[item.id] || 0) + 1 }));
+    setToastItem(item);
+    setToastVisible(true);
+  }, []);
 
-    const matchSearch =
-      item.name.toLowerCase().includes(search.toLowerCase());
+  useEffect(() => {
+    if (!toastVisible) return;
+    const t = setTimeout(() => setToastVisible(false), 1800);
+    return () => clearTimeout(t);
+  }, [toastVisible, toastItem]);
 
-    return matchCategory && matchSearch;
-  });
+  const sectionLabel = useMemo(() => {
+    if (activeCategory === "all") return "All Coffees";
+    return categories.find((c) => c.id === activeCategory)?.label || activeCategory;
+  }, [activeCategory]);
 
   return (
-    <section className="menu-page">
+    <div className="menu-page">
+      <MenuHeader
+        activeCategory={activeCategory}
+        onCategoryChange={setActiveCategory}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        cartCount={totalCartItems}
+      />
 
-      {/* Header */}
+      <main className="menu-page__body">
+        {filteredItems.length === 0 ? (
+          <div className="menu-page__empty">
+            <div className="menu-page__empty-icon">☕</div>
+            <p className="menu-page__empty-text">No items found.</p>
+          </div>
+        ) : (
+          <>
+            <h2 className="menu-page__section-title">{sectionLabel}</h2>
+            <div className="menu-page__grid">
+              {filteredItems.map((item) => (
+                <MenuCard
+                  key={item.id}
+                  item={item}
+                  onAdd={handleAddToCart}
+                  cartCount={cart[item.id] || 0}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </main>
 
-      <div className="menu-header">
-
-        <h1>Our Menu</h1>
-
-        <p>
-          Crafted with passion. Served with elegance.
-        </p>
-
+      <div className={`menu-toast${toastVisible ? " menu-toast--visible" : ""}`}>
+        {toastItem ? `${toastItem.name} added to cart ☕` : ""}
       </div>
-
-      {/* Search */}
-
-      <div className="search-box">
-
-        <input
-          type="text"
-          placeholder="Search coffee..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-
-      </div>
-
-      {/* Categories */}
-
-      <div className="categories">
-
-        {categories.map((category) => (
-
-          <button
-            key={category}
-            className={
-              selectedCategory === category
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setSelectedCategory(category)
-            }
-          >
-            {category}
-          </button>
-
-        ))}
-
-      </div>
-
-      {/* Cards */}
-
-      <div className="menu-grid">
-
-        {filteredMenu.map((item) => (
-
-          <MenuCard
-            key={item.id}
-            item={item}
-          />
-
-        ))}
-
-      </div>
-
-    </section>
+    </div>
   );
 }
-
-export default Menu;
