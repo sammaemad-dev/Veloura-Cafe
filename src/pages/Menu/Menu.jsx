@@ -4,10 +4,9 @@ import MenuHeader from "./MenuHeader";
 import MenuCard from "./MenuCard";
 import { menuItems, categories } from "./MenuData";
 
-export default function Menu() {
+export default function Menu({ cart, setCart }) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery]       = useState("");
-  const [cart, setCart]                     = useState({});
   const [toastItem, setToastItem]           = useState(null);
   const [toastVisible, setToastVisible]     = useState(false);
 
@@ -31,7 +30,7 @@ export default function Menu() {
     setCart((prev) => ({ ...prev, [item.id]: (prev[item.id] || 0) + 1 }));
     setToastItem(item);
     setToastVisible(true);
-  }, []);
+  }, [setCart]);
 
   useEffect(() => {
     if (!toastVisible) return;

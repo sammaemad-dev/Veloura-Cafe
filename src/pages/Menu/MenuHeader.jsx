@@ -1,20 +1,7 @@
 
+import { useNavigate } from "react-router-dom";
 import "./MenuHeader.css";
 import { categories } from "./MenuData";
-
-function IconLeaf() {
-  return (
-    <svg viewBox="0 0 40 40" fill="none" className="menu-header__logo-icon">
-      <path
-        d="M20 4C20 4 8 10 8 24C8 31 13.5 36 20 36C26.5 36 32 31 32 24C32 10 20 4 20 4Z"
-        fill="currentColor" opacity="0.85"
-      />
-      <path d="M20 36V16" stroke="#2c1a0e" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M20 24C20 24 14 20 12 14" stroke="#2c1a0e" strokeWidth="1.2" strokeLinecap="round" />
-      <path d="M20 20C20 20 26 17 28 12" stroke="#2c1a0e" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  );
-}
 
 function IconSearch() {
   return (
@@ -55,19 +42,26 @@ export default function MenuHeader({
   onSearchChange,
   cartCount = 0,
 }) {
+  const navigate = useNavigate();
+
   return (
     <header className="menu-header">
       {/* ── Top bar ── */}
       <div className="menu-header__top">
+        {/* Logo left */}
         <div className="menu-header__brand">
-          <IconLeaf />
           <div className="menu-header__brand-text">
             <span className="menu-header__brand-name">VELOURA</span>
             <span className="menu-header__brand-tagline">Cafe</span>
           </div>
         </div>
 
-        <button className="menu-header__cart-btn" aria-label="View cart">
+        {/* Cart right — navigates to /cart */}
+        <button
+          className="menu-header__cart-btn"
+          aria-label="View cart"
+          onClick={() => navigate("/cart")}
+        >
           <IconCart />
           {cartCount > 0 && (
             <span className="menu-header__cart-badge">
@@ -94,7 +88,7 @@ export default function MenuHeader({
         </div>
       </div>
 
-      {/* ── Category tabs — no icons ── */}
+      {/* ── Category tabs ── */}
       <div className="menu-header__categories">
         {categories.map((cat) => (
           <button
