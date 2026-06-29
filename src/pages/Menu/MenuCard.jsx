@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./MenuCard.css";
 
 export default function MenuCard({ item, onAdd, cartCount = 0 }) {

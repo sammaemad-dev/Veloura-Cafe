@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, useEffect } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import "./Menu.css";
 import MenuHeader from "./MenuHeader";
 import MenuCard from "./MenuCard";

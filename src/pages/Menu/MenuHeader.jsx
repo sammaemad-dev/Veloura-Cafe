@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./MenuHeader.css";
 import { categories } from "./MenuData";
 
