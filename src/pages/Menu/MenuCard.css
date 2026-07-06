@@ -138,3 +138,8 @@
 .menu-card--in-cart .menu-card__add-btn {
   background: #c97d2e;
 }
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

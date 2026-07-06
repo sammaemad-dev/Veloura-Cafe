@@ -9,6 +9,7 @@ import Contact from "./pages/Contact/Contact";
 import OurCafe from "./pages/OurCafe/OurCafe";
 import Menu from "./pages/Menu/Menu";
 import Cart from "./pages/Cart/Cart";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
 
 function App() {
 
@@ -56,6 +57,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/our-cafe" element={<OurCafe />} />
+
+        <Route path="/product/:id" element={<ProductDetails />} />
 
       </Routes>
 
