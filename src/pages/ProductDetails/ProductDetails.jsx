@@ -20,14 +20,14 @@ function ProductDetails() {
   return (
     <div className="details-page">
 
-      <div className="details-image">
+      <button
+        className="back-btn"
+        onClick={() => navigate(-1)}
+      >
+        ← Back
+      </button>
 
-        <button
-          className="back-btn"
-          onClick={() => navigate(-1)}
-        >
-          ←
-        </button>
+      <div className="details-image">
 
         <img
           src={product.image}
@@ -38,29 +38,31 @@ function ProductDetails() {
 
       <div className="details-card">
 
-        <div className="title-row">
+        <span className="rating">
+          ⭐ {product.rating}
+        </span>
 
-          <h2>{product.name}</h2>
-
-          <span className="rating">
-            ⭐ {product.rating}
-          </span>
-
-        </div>
+        <h1>{product.name}</h1>
 
         <p className="subtitle">
           {product.subtitle}
         </p>
 
+        <hr />
+
         <h3>Description</h3>
 
         <p className="description">
-          A delicious coffee prepared with premium beans,
-          creamy milk and rich flavor. Perfect for every
-          coffee lover.
+          Crafted from carefully selected premium coffee beans,
+          blended with fresh milk to deliver a rich and smooth
+          flavor in every sip. Every cup is prepared with passion
+          by our expert baristas to give you an unforgettable
+          coffee experience.
         </p>
 
-        <h3>Size</h3>
+        <hr />
+
+        <h3>Choose Size</h3>
 
         <div className="sizes">
 
@@ -68,26 +70,26 @@ function ProductDetails() {
             className={size === "S" ? "active" : ""}
             onClick={() => setSize("S")}
           >
-            S
+            Small
           </button>
 
           <button
             className={size === "M" ? "active" : ""}
             onClick={() => setSize("M")}
           >
-            M
+            Medium
           </button>
 
           <button
             className={size === "L" ? "active" : ""}
             onClick={() => setSize("L")}
           >
-            L
+            Large
           </button>
 
         </div>
 
-        <div className="bottom">
+        <div className="price-box">
 
           <div>
 
@@ -95,11 +97,16 @@ function ProductDetails() {
               Price
             </span>
 
-            <h2>{product.price} Rs</h2>
+            <h2 className="price">
+              {product.price} Rs
+            </h2>
 
           </div>
 
-          <button className="buy-btn">
+          <button
+            className="buy-btn"
+            onClick={() => navigate("/tracking")}
+          >
             Buy Now
           </button>
 

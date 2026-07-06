@@ -10,6 +10,8 @@ import OurCafe from "./pages/OurCafe/OurCafe";
 import Menu from "./pages/Menu/Menu";
 import Cart from "./pages/Cart/Cart";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import Reviews from "./pages/Reviews/Reviews";
+import Tracking from "./pages/Tracking/Tracking";
 
 function App() {
 
@@ -59,6 +61,10 @@ function App() {
         <Route path="/our-cafe" element={<OurCafe />} />
 
         <Route path="/product/:id" element={<ProductDetails />} />
+
+        <Route path="/reviews" element={<Reviews />} />
+
+        <Route path="/tracking" element={<Tracking />} />
 
       </Routes>
 
