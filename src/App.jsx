@@ -12,6 +12,7 @@ import Cart from "./pages/Cart/Cart";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Reviews from "./pages/Reviews/Reviews";
 import Tracking from "./pages/Tracking/Tracking";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -67,6 +68,10 @@ function App() {
         <Route path="/tracking" element={<Tracking />} />
 
       </Routes>
+    
+
+      <Footer />
+
 
     </BrowserRouter>
   );
