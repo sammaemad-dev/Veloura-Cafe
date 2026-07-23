@@ -1,5 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { useState } from "react";
+
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -12,22 +20,24 @@ import Cart from "./pages/Cart/Cart";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Reviews from "./pages/Reviews/Reviews";
 import Tracking from "./pages/Tracking/Tracking";
-import Footer from "./components/Footer/Footer";
 
-function App() {
-
-  // Cart State
+function AppContent() {
   const [cart, setCart] = useState({});
+  const location = useLocation();
+
+  const hideLayout =
+    location.pathname === "/login" ||
+    location.pathname === "/register";
 
   function handleClearCart() {
     setCart({});
   }
 
   return (
-    <BrowserRouter>
+    <>
+      {!hideLayout && <Navbar />}
 
       <Routes>
-
         <Route path="/" element={<Home />} />
 
         <Route path="/about" element={<About />} />
@@ -61,18 +71,25 @@ function App() {
 
         <Route path="/our-cafe" element={<OurCafe />} />
 
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route
+          path="/product/:id"
+          element={<ProductDetails />}
+        />
 
         <Route path="/reviews" element={<Reviews />} />
 
         <Route path="/tracking" element={<Tracking />} />
-
       </Routes>
-    
 
-      <Footer />
+      {!hideLayout && <Footer />}
+    </>
+  );
+}
 
-
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }

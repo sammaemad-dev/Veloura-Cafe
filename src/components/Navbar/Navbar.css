@@ -125,3 +125,11 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(212, 163, 115, 0.35);
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}

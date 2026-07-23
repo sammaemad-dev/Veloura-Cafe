@@ -1,5 +1,5 @@
 import "./Hero.css";
-import Navbar from "../../components/Navbar/Navbar";
+// import Navbar from "../../components/Navbar/Navbar";
 import coffeeImage from "../images/coffee.png";
 
 function Hero() {
@@ -10,7 +10,7 @@ function Hero() {
         backgroundImage: `url(${coffeeImage})`,
       }}
     >
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="hero-overlay"></div>
 
