@@ -19,6 +19,7 @@
   width: 100%;
   border-radius: 20px;
   object-fit: cover;
+  display: block;
 }
 
 .about-content {
@@ -73,6 +74,7 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  flex-shrink: 0;
 }
 
 .feature p {
@@ -82,23 +84,45 @@
 }
 
 .learn-btn {
+  display: inline-block;
+  text-decoration: none;
   background: #d49a52;
-  color: black;
-  border: none;
+  color: #111;
   padding: 16px 35px;
   border-radius: 10px;
   font-size: 18px;
-  cursor: pointer;
+  font-weight: 600;
   transition: 0.3s;
 }
 
 .learn-btn:hover {
   transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212, 154, 82, 0.35);
 }
 
+/* ===========================
+        Tablet
+=========================== */
+
 @media (max-width: 992px) {
+
+  .about {
+    padding: 80px 6%;
+  }
+
   .about-container {
     flex-direction: column;
+    text-align: center;
+    gap: 45px;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-image img {
+    max-width: 550px;
+    margin: auto;
   }
 
   .about-content {
@@ -106,6 +130,109 @@
   }
 
   .about-content h2 {
-    font-size: 45px;
+    font-size: 46px;
   }
+
+  .about-content p {
+    font-size: 17px;
+  }
+
+  .feature {
+    justify-content: center;
+  }
+
+}
+
+/* ===========================
+        Mobile
+=========================== */
+
+@media (max-width: 768px) {
+
+  .about {
+    padding: 70px 20px;
+  }
+
+  .about-container {
+    gap: 35px;
+  }
+
+  .about-image img {
+    border-radius: 18px;
+  }
+
+  .about-subtitle {
+    font-size: 24px;
+  }
+
+  .about-content h2 {
+    font-size: 38px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .features {
+    gap: 16px;
+  }
+
+  .feature {
+    justify-content: flex-start;
+  }
+
+  .feature span {
+    width: 32px;
+    height: 32px;
+  }
+
+  .feature p {
+    font-size: 15px;
+  }
+
+  .learn-btn {
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    font-size: 17px;
+  }
+
+}
+
+/* ===========================
+      Small Mobile
+=========================== */
+
+@media (max-width: 480px) {
+
+  .about {
+    padding: 60px 18px;
+  }
+
+  .about-subtitle {
+    font-size: 22px;
+  }
+
+  .about-content h2 {
+    font-size: 32px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+  }
+
+  .feature {
+    align-items: flex-start;
+  }
+
+  .feature p {
+    font-size: 14px;
+  }
+
+  .learn-btn {
+    font-size: 16px;
+    padding: 15px;
+  }
+
 }

@@ -51,7 +51,7 @@ function About() {
             Learn More →
           </button> */}
           <Link to="/our-cafe" className="learn-btn">
-  Learn More →
+  Show the location →
 </Link>
         </div>
 
