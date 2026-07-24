@@ -77,3 +77,107 @@
   transform: translateY(-2px);
   transition: 0.3s;
 }
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width: 992px) {
+
+  .hero-content {
+    padding: 140px 40px 0;
+    max-width: 550px;
+  }
+
+  .welcome-text {
+    font-size: 34px;
+  }
+
+  .hero-content h1 {
+    font-size: 52px;
+  }
+
+  .hero-content p {
+    font-size: 17px;
+  }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width: 768px) {
+
+  .hero {
+    background-position: center right;
+  }
+
+  .hero-overlay {
+    background: rgba(10, 6, 4, 0.78);
+  }
+
+  .hero-content {
+    padding: 140px 25px 60px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .welcome-text {
+    font-size: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .explore-btn,
+  .book-btn {
+    width: 230px;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+}
+
+/* ===========================
+   Small Mobile
+=========================== */
+
+@media (max-width: 480px) {
+
+  .hero-content {
+    padding: 120px 20px 50px;
+  }
+
+  .welcome-text {
+    font-size: 26px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .explore-btn,
+  .book-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+}

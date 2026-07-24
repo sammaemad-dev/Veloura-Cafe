@@ -1,8 +1,10 @@
 import "./Hero.css";
-// import Navbar from "../../components/Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 import coffeeImage from "../images/coffee.png";
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section
       className="hero"
@@ -10,8 +12,6 @@ function Hero() {
         backgroundImage: `url(${coffeeImage})`,
       }}
     >
-      {/* <Navbar /> */}
-
       <div className="hero-overlay"></div>
 
       <div className="hero-content">
@@ -32,8 +32,19 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <button className="explore-btn">Explore Menu</button>
-          <button className="book-btn">Book a Table</button>
+          <button
+            className="explore-btn"
+            onClick={() => navigate("/menu")}
+          >
+            Explore Menu
+          </button>
+
+          <button
+            className="book-btn"
+            onClick={() => navigate("/contact")}
+          >
+            Book a Table
+          </button>
         </div>
       </div>
     </section>
