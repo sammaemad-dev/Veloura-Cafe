@@ -8,6 +8,7 @@ import { useState } from "react";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import CoffeeQuote from "./components/CoffeeQuote/CoffeeQuote";
 
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -27,8 +28,8 @@ function AppContent() {
 
   const hideLayout =
     location.pathname === "/login" ||
-    location.pathname === "/register"
-    || location.pathname === "/menu";
+    location.pathname === "/register" ||
+    location.pathname === "/menu";
 
   function handleClearCart() {
     setCart({});
@@ -81,6 +82,8 @@ function AppContent() {
 
         <Route path="/tracking" element={<Tracking />} />
       </Routes>
+
+      {!hideLayout && <CoffeeQuote />}
 
       {!hideLayout && <Footer />}
     </>

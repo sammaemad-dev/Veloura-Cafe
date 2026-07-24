@@ -1,10 +1,10 @@
 /* ======================= */
 
 .footer{
-    margin-top:80px;
+    /* margin-top:80px; */
     background:#2b170d;
     color:#fff;
-    border-top:3px solid #c99b63;
+    /* border-top:3px solid #c99b63; */
 }
 
 /* ======================= */
@@ -166,7 +166,7 @@
 
 .copyright{
 
-    background:#000;
+    background:#2b170d;
 
     color:#d5d5d5;
 
