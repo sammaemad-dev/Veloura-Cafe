@@ -50,7 +50,7 @@ export default function Cart({ cart, onUpdateCart, onClearCart }) {
   function handleSuccessClose() {
     onClearCart();
     setSuccess(false);
-    navigate("/");
+    navigate("/menu");
   }
 
   return (
@@ -76,7 +76,7 @@ export default function Cart({ cart, onUpdateCart, onClearCart }) {
             <div className="cart-empty__icon">🛒</div>
             <p className="cart-empty__text">Your cart is empty</p>
             <p className="cart-empty__sub">Add something delicious from the menu</p>
-            <button className="cart-empty__btn" onClick={() => navigate("/")}>
+            <button className="cart-empty__btn" onClick={() => navigate("/menu")}>
               Browse Menu
             </button>
           </div>
