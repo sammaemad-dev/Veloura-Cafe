@@ -181,3 +181,154 @@
     font-weight:600;
 
 }
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width: 992px) {
+
+  .register-page {
+    padding: 30px;
+  }
+
+  .register-container {
+    width: 100%;
+    max-width: 850px;
+  }
+
+  .register-left,
+  .register-card {
+    padding: 45px;
+  }
+
+  .register-left h2 {
+    font-size: 2.5rem;
+  }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width: 768px) {
+
+  .register-page {
+    padding: 20px;
+  }
+
+  .register-container {
+
+    grid-template-columns: 1fr;
+
+    width: 100%;
+
+    max-width: 450px;
+
+    border-radius: 20px;
+
+  }
+
+  .register-left {
+
+    text-align: center;
+
+    padding: 45px 30px;
+
+  }
+
+  .register-left h1 {
+
+    font-size: 1.8rem;
+
+  }
+
+  .register-left h2 {
+
+    font-size: 2.2rem;
+
+    margin-bottom: 20px;
+
+  }
+
+  .register-left p {
+
+    font-size: 15px;
+
+  }
+
+  .register-card {
+
+    padding: 40px 30px;
+
+  }
+
+}
+
+/* ===========================
+   Small Mobile
+=========================== */
+
+@media (max-width: 480px) {
+
+  .register-page {
+
+    padding: 15px;
+
+  }
+
+  .register-left {
+
+    padding: 35px 20px;
+
+  }
+
+  .register-left h1 {
+
+    font-size: 1.5rem;
+
+  }
+
+  .register-left h2 {
+
+    font-size: 1.8rem;
+
+  }
+
+  .register-left p {
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+  }
+
+  .register-card {
+
+    padding: 30px 20px;
+
+  }
+
+  .register-card h2 {
+
+    font-size: 1.7rem;
+
+  }
+
+  .register-card input,
+  .register-card button {
+
+    padding: 14px;
+
+    font-size: 15px;
+
+  }
+
+  .register-card p {
+
+    font-size: 14px;
+
+  }
+
+}

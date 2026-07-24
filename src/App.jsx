@@ -27,7 +27,8 @@ function AppContent() {
 
   const hideLayout =
     location.pathname === "/login" ||
-    location.pathname === "/register";
+    location.pathname === "/register"
+    || location.pathname === "/menu";
 
   function handleClearCart() {
     setCart({});

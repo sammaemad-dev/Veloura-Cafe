@@ -176,3 +176,155 @@
     font-weight: 600;
 
 }
+
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width: 992px) {
+
+  .login-page {
+    padding: 30px;
+  }
+
+  .login-container {
+    width: 100%;
+    max-width: 850px;
+  }
+
+  .login-left,
+  .login-card {
+    padding: 45px;
+  }
+
+  .login-left h2 {
+    font-size: 2.5rem;
+  }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width: 768px) {
+
+  .login-page {
+    padding: 20px;
+  }
+
+  .login-container {
+
+    grid-template-columns: 1fr;
+
+    width: 100%;
+
+    max-width: 450px;
+
+    border-radius: 20px;
+
+  }
+
+  .login-left {
+
+    text-align: center;
+
+    padding: 45px 30px;
+
+  }
+
+  .login-left h1 {
+
+    font-size: 1.8rem;
+
+  }
+
+  .login-left h2 {
+
+    font-size: 2.2rem;
+
+    margin-bottom: 20px;
+
+  }
+
+  .login-left p {
+
+    font-size: 15px;
+
+  }
+
+  .login-card {
+
+    padding: 40px 30px;
+
+  }
+
+}
+
+/* ===========================
+   Small Mobile
+=========================== */
+
+@media (max-width: 480px) {
+
+  .login-page {
+
+    padding: 15px;
+
+  }
+
+  .login-left {
+
+    padding: 35px 20px;
+
+  }
+
+  .login-left h1 {
+
+    font-size: 1.5rem;
+
+  }
+
+  .login-left h2 {
+
+    font-size: 1.8rem;
+
+  }
+
+  .login-left p {
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+  }
+
+  .login-card {
+
+    padding: 30px 20px;
+
+  }
+
+  .login-card h2 {
+
+    font-size: 1.7rem;
+
+  }
+
+  .login-card input,
+  .login-card button {
+
+    padding: 14px;
+
+    font-size: 15px;
+
+  }
+
+  .login-card p {
+
+    font-size: 14px;
+
+  }
+
+}
